@@ -1,0 +1,193 @@
+body{
+background-color:#D5DEE2;
+}
+
+@font-face {
+  font-family: opensansbold;
+  src: url(font\Open_Sans\OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "opensanslight";
+  src: url(font\Open_Sans\OpenSans-Light.ttf);
+}
+
+@font-face {
+  font-family: opensansregular;
+  src: url(font\Open_Sans\OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: opensanssemibold;
+  src: url(font\Open_Sans\OpenSans-SemiBold.ttf);
+}
+
+.opensansbold{
+font: opensansbold;
+}
+
+header.header{
+background-color: #333;
+border-top: 3px solid dodgerblue;
+padding: 10px;
+border-radius: 30px 30px 0 0;
+}
+
+nav.navigasi{
+background: linear-gradient(#333, dodgerblue);
+padding: 3px;
+border-top: 1px solid #333;
+color: white;
+}
+
+nav.navigasi a{
+color: antiquewhite
+}
+
+nav.navigasi a:hover{
+color: #333;
+}
+
+aside.aside, main.main{
+margin: 10px;
+}
+
+main.main{
+background-color: white;
+}
+
+.aside ul{
+margin: 10px 0;
+}
+
+.aside li.aside_header{
+background-color: dodgerblue;
+padding: 5px;
+color: white;
+font-weight: bold;
+word-spacing: 2px;
+letter-spacing: 2px;
+}
+.aside li.aside_header a{
+}
+
+aside.aside{
+word-wrap: wrap;
+}
+
+.aside li:not(:first-child):nth-child(odd), .related li:not(:first-child):nth-child(odd), .lainnya li:not(:first-child):nth-child(odd){
+background-color:beige;
+border-bottom: 1px solid #333;
+}
+
+.aside li:not(:first-child):nth-child(even), .related li:not(:first-child):nth-child(even), .lainnya li:not(:first-child):nth-child(even){
+background-color:white;
+/*border-bottom: 1px solid #333;*/
+}
+
+footer.footer{
+background-color: #333;
+padding: 10px 10px 0;
+margin: 10px 0px 5px;
+border-top: 3px solid dodgerblue;
+color: white;
+clear: both;
+border-radius:  0 0 25px 25px;
+}
+
+footer .copy{
+background-color: #555;
+}
+
+.judul {
+width: 400px;
+word-wrap: break-word;
+padding: 5px;
+}
+
+.related_header{
+background-color: #222;
+font-weight: bold;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: white;
+clear: both;
+padding: 10px;
+}
+
+.related, .lainnya{
+margin: 15px 0;
+}
+
+article{
+font-size: 18px;
+font-family: "Open Sans", sans-serif;
+}
+
+.dibaca{
+color: grey;
+font-size: 12px;
+padding: 0 5px
+}
+
+.bungkus{
+background-color: #939DA2;
+padding: 5px 0;
+}
+
+.artikel .thumbnail{
+margin-top: 25px;
+}
+
+.artikel{
+margin-bottom: 10px;
+}
+
+.pagination>li>a, .pagination>li>span{
+border-radius: 25px;
+}
+
+.pagination>li:nth-child(11)>a {
+border: none;
+background: none;
+color: white;
+font-size: 20px;
+font-weight: bold;
+}
+
+.pagination>li>a:hover {
+background: #555;
+color: white;
+font-weight: bold;
+}
+
+div.limit{
+margin-top: 20px;
+}
+
+h2.terbaru{
+border-left: 3px solid dodgerblue;
+padding-left: 5px;
+}
+
+.data{
+background-color: lemonchiffon;
+}
+
+.nav.dibaca li a {
+color: gray;
+}
+
+.sumber{
+margin: 20px 0;
+}
+
+.sumber_link{
+border-left: 3px solid dodgerblue;
+padding: 5px;
+background-color: lemonchiffon;
+}
+
+.data_tanggal{
+margin: 10px 0;
+}
