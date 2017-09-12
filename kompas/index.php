@@ -43,7 +43,7 @@ echo $get;
           console.log(data);
           //masukkan ke database
           $.ajax({
-            url : "msavedb.php",
+            url : "/index.php/csavedb/csavedbf",
             data: data,
             success: function(response){
               console.log(response);
