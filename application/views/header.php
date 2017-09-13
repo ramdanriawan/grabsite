@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Baca Berita Terbaru Dari Berbagai Sumber</title>
     <!--  load semua script yang dibutuhkan -->
-    <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
-    <script src="script.js" charset="utf-8"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="/script.js" charset="utf-8"></script>
 
     <!--  load semua css yang dibutuhkan -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body class="container">
 
@@ -179,64 +179,5 @@
       </div>
     </li>
   </ul>
-  <!--  berita terpopuler -->
-  <ul class="nav navbar-link">
-    <li class="aside_header text-center">Berita lagi</li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-    <li>
-      <div class="judul">
-        <a href="#beritaterpopuler1">berita lagi ke 1  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-      </div>
-      <div class="dibaca">
-        dibaca : 500x
-      </div>
-    </li>
-  </ul>
+
 </aside>

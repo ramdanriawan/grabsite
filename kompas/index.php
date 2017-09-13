@@ -10,47 +10,56 @@ echo $get;
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="/node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
     <title>Test Kompass.com</title>
   </head>
   <body>
 
     <script>
       $(document).ready(function(){
-        var latest = $(".article__list.clearfix .article__link");
-        var date =  $(".article__list.clearfix .article__date");
-        var kategory = $(".article__list.clearfix .article__subtitle.article__subtitle--inline");
+        var latest   = $(".article__list.clearfix:not(.article__list--video) .article__link");
+        var date     = $(".article__list.clearfix:not(.article__list--video) .article__date");
+        var kategory = $(".article__list.clearfix:not(.article__list--video) .article__subtitle.article__subtitle--inline");
+        var gambar   = $(".article__list.clearfix:not(.article__list--video) .article__list__asset.clearfix .article__asset img");
+        var data     = {sumber: "http://www.kompas.com"};
+        var a        = 0;
+        // console.log(latest); console.log(date); console.log(kategory); console.log(gambar);
 
-        var data = {};
-        // console.log(latest);
-        // console.log(date);
-        // console.log(kategory);
+        //menentukan isi data
         $.each(latest, function(key, value){
           //menentukan link dan judul
-          data.link = value.href;
-          data.judul = value.innerText;
+          data.link     = value.href;
+          data.judul    = value.innerText;
+          console.log(data.judul);
 
           //menentukan tanggal
-          $.each(date, function(key, value){
-            data.date = value.innerText;
-          })
+          data.date     = date[a].innerText;
+          console.log(data.date);
 
           //menentukan kategory
-          $.each(kategory, function(key, value){
-            data.kategory = value.innerText;
-          })
+          data.kategory = kategory[a].innerText;
+          console.log(data.kategory);
 
-          console.log(data);
-          //masukkan ke database
+          //menentukan gambar
+          data.gambar   = gambar[a].src;
+          console.log(data.gambar);
+
+          //untuk melihat isi data
+          console.log(data); console.log(a);
+
+          //lakukan request ajax
+          var url = "/index.php/csavedb/csavedbf";
+
           $.ajax({
-            url : "/index.php/csavedb/csavedbf",
+            url : url,
             data: data,
             success: function(response){
               console.log(response);
             }
           })
 
-          //
+          //menambahkan nilai a;
+          a++;
         })
 
       })

@@ -27,5 +27,23 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      $(document).ready(function() {
+          var form_jump = $(".form-jump");
+          var input_jump = $(".input-jump");
+          console.log("oke");
+          form_jump.submit(function(event) {
+            event.preventDefault();
+            window.location.href = `<?php echo base_url();?>${input_jump.val()}/<?php echo $hasil["jumlah_limit"];?>`;
+          });
+
+          var select_limit = $(".select-limit");
+          select_limit.change(function(event) {
+            event.preventDefault();
+            window.location.href = `<?php echo base_url().$hasil["page"];?>/${$(this).val()}`;
+          });
+      });
+    </script>
   </body>
 </html>

@@ -1,8 +1,3 @@
-<?php 
-
-if ($status == "success") {
-	echo "success";
-}else{
-	echo "failed";
-}
+<?php
+echo $status;
 ?>

@@ -151,8 +151,6 @@ border-radius: 25px;
 border: none;
 background: none;
 color: white;
-font-size: 20px;
-font-weight: bold;
 }
 
 .pagination>li>a:hover {
@@ -190,4 +188,24 @@ background-color: lemonchiffon;
 
 .data_tanggal{
 margin: 10px 0;
+}
+
+.pagination>li>a{
+margin-left: 3px;
+}
+
+.pagination>li>a.jumlah_data{
+background-color: #333;
+color: grey;
+}
+
+.pagination>li>a.jumlah_data:hover{
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+}
+
+.pagination>li:last-child>a {
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px;
 }
