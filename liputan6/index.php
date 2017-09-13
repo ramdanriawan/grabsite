@@ -15,16 +15,19 @@ echo $get;
 
      <script>
        $(document).ready(function(){
-         var judul = $(".articles--iridescent-list--item .articles--iridescent-list--text-item__title-link-text");
-         var description = $(".articles--iridescent-list--item .articles--iridescent-list--text-item__summary");
-         var kategory = $(".articles--iridescent-list--item .articles--iridescent-list--text-item__category");
-         var date = $(".articles--iridescent-list--item .articles--iridescent-list--text-item__time.timeago");
+         var gambar = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__figure-thumbnail a.ui--a.articles--iridescent-list--text-item__figure-thumbnail-link picture img.articles--iridescent-list--text-item__figure-image-lazyload.lazyloaded");
+         var judul = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__details .articles--iridescent-list--text-item__header .articles--iridescent-list--text-item__title .ui--a.articles--iridescent-list--text-item__title-link .articles--iridescent-list--text-item__title-link-text");
+         var description = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__summary");
+         var kategory = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__category");
+         var date = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__time.timeago");
          var data = {};
+         var a = 0;
 
-         console.log(judul);
-         console.log(description);
-         console.log(kategory);
-         console.log(date);
+         console.log("gambar",gambar);
+         console.log("judul",judul);
+         console.log("description",description);
+         console.log("kategory",kategory);
+         console.log("date",date);
 
          //ambil data judul dan link
          $.each(judul, function(key, value){
@@ -32,21 +35,22 @@ echo $get;
            data.link = value.parentElement.href;
 
            //ambil data description
-           $.each(description, function(key, value){
-             data.description = value.innerText;
-           })
-
+           data.description = description[a].innerText; 
+           
            //ambil data kategory
-           $.each(kategory, function(key, value){
-             data.kategory = value.innerText;
-           })
+           data.kategory = kategory[a].innerText;
 
            //ambil data date
-           $.each(date, function(key, value){
-             data.date = value.innerText;
-           })
+           console.log(a, date);
+           if (date[a].innerText == "undefined") {
+            data.date = "-";
+          }else{
+            data.date = date[a].innerText;
+          }
+           
 
            console.log(data);
+           a++;
          })
 
        })

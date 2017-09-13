@@ -12,7 +12,7 @@
  		$this->load->model("msavedb");
 
  		$file = array(
-    "gambar"      => $this->input->get("gambar"),
+    	"gambar"      => $this->input->get("gambar"),
 		"judul"       => $this->input->get("judul"),
 		"link"        => $this->input->get("link"),
 		"description" => $this->input->get("description"),#
