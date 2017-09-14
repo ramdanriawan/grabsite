@@ -1,8 +1,8 @@
 <?php include "header.php"; ?>
 <!-- script php untuk melihat $hasil untuk di proses -->
-<?php //echo "<pre>";print_r($hasil); /*print_r($_SERVER);*/ /*print_r($_GET);*/ echo "</pre>";?>
+<?php   //echo "<pre>";print_r($_SERVER);print_r($hasil); /*print_r($_GET);*/ echo "</pre>";?>
 
-<main class="main col-md-7">
+<main class="main col-md-7"></main>
   <content class="content">
     <div class="row data">
       <!-- Text Berita Terbaru -->
@@ -35,36 +35,36 @@
     <!-- list artikel -->
 <?php foreach ($hasil["data"] as $key => $value) {
 echo <<<EOD
-    <artikel class="artikel">
-      <div class="row">
-        <!--  gambar -->
-        <div class="col-md-3 pull-left thumbnail">
-          <img src="$value->gambar" alt="$value->judul" title="$value->judul">
-        </div>
+  <artikel class="artikel">
+	<div class="row">
+		<!--  gambar -->
+		<div class="col-md-3 pull-left thumbnail">
+			<img src="$value->gambar" alt="$value->judul" title="$value->judul">
+		</div>
 
-        <!--  artikel -->
-        <div class="col-md-9 artikle pull-right">
-          <!-- judul artikel -->
-          <div class="col-md-12">
-            <h3><a href="$value->link" target="_blank">$value->judul</a></h3>
-          </div>
+		<!--  artikel -->
+		<div class="col-md-9 artikle pull-right">
+			<!-- judul artikel -->
+			<div class="col-md-12">
+				<h3><a href="$value->link" target="_blank">$value->judul</a></h3>
+			</div>
 
-          <!-- isi artikel -->
-          <div class="col-md-12">
-            $value->description
-          </div>
+			<!-- isi artikel -->
+			<div class="col-md-12">
+				$value->description
+			</div>
 
-          <!--  data update -->
-          <div class="col-md-12">
-            <ul class="nav nav-pills dibaca">
-              <li><a href="#" target="_blank">$value->kategory</a></li>
-              <li><a href="#" target="_blank">$value->date</a></li>
-              <li><a href="$value->sumber" target="_blank">$value->sumber</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </artikel>
+			<!--  data update -->
+			<div class="col-md-12">
+				<ul class="nav nav-pills dibaca">
+					<li><a href="#" target="_blank">$value->kategory</a></li>
+					<li><a href="#" target="_blank">$value->date</a></li>
+					<li><a href="$value->sumber" target="_blank">$value->sumber</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</artikel>
 EOD;
 }?>
 
