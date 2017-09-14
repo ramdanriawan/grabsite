@@ -15,42 +15,27 @@ echo $get;
 
     <script>
       $(document).ready(function(){
+        var list = $(".p1520.art-list.pos_rel");
+        var gambar = $(".p1520.art-list.pos_rel img.shou2.bgwhite");
         var judul = $(".p1520.art-list.pos_rel a.f20.ln24.fbo.txt-oev-2");
-        // var link = $(".p1520.art-list.pos_rel a.p1520.art-list.pos_rel");
-        var description = $(".p1520.art-list.pos_rel .grey2.pt5.f13.ln18.txt-oev-2");
-        var kategory = $(".p1520.art-list.pos_rel .fbo2.tsa-2");
-        var date = $(".p1520.art-list.pos_rel .foot.timeago");
-        var data = {};
 
-        console.log(judul);
-        console.log(description);
-        console.log(kategory);
-        console.log(date);
+        //buang iklan yang mengganggu
+        var ads = $("li[id *= NativeAds].pos_rel.p1520");
+        ads.remove();
 
-        //ambil data judul dan link
-        $.each(judul, function(key, value){
-          data.judul = value.innerText;
-          data.link = value.href;
+        //lakukan perulangan untuk membuang artikel yang tidak memiliki gambar
+        for (i = 0; i < list.length; i++) {
+          var findGambar = list.eq(i).find("img.shou2.bgwhite");
 
-          //ambil data description
-          $.each(description, function(key, value){
-            data.description = value.innerText;
-          })
+          if (findGambar.length == 0) {
+            list.eq(i).remove();
+          }
+        }
 
-          //ambil data kategory
-          $.each(kategory, function(key, value){
-            data.kategory = value.innerText;
-          })
+        //gunakan perulangan each untuk mengambil semua data berita
+        console.log(list);
 
-          //ambil data date
-          $.each(date, function(key, value){
-            data.date = value.innerText;
-          })
-
-          console.log(data);
-        })
-
-      })
+     })
     </script>
   </body>
 </html>

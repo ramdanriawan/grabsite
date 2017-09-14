@@ -15,43 +15,40 @@ echo $get;
 
      <script>
        $(document).ready(function(){
-         var gambar = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__figure-thumbnail a.ui--a.articles--iridescent-list--text-item__figure-thumbnail-link picture img.articles--iridescent-list--text-item__figure-image-lazyload.lazyloaded");
-         var judul = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__details .articles--iridescent-list--text-item__header .articles--iridescent-list--text-item__title .ui--a.articles--iridescent-list--text-item__title-link .articles--iridescent-list--text-item__title-link-text");
-         var description = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__summary");
-         var kategory = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__category");
-         var date = $("article.articles--iridescent-list--item .articles--iridescent-list--text-item__time.timeago");
+         var judul = $("section article.articles--iridescent-list--text-item__details.articles--iridescent-list--text-item__header aside.articles--iridescent-list--text-item__details header.articles--iridescent-list--text-item__header h4.articles--iridescent-list--text-item__title ~ span.articles--iridescent-list--text-item__datetime a.ui--a.articles--iridescent-list--text-item__title-link");
+
          var data = {};
          var a = 0;
 
-         console.log("gambar",gambar);
          console.log("judul",judul);
-         console.log("description",description);
-         console.log("kategory",kategory);
-         console.log("date",date);
+         // console.log("judul",judul);
+         // console.log("description",description);
+         // console.log("kategory",kategory);
+         // console.log("date",date);
 
          //ambil data judul dan link
-         $.each(judul, function(key, value){
-           data.judul = value.innerText;
-           data.link = value.parentElement.href;
+         // $.each(judul, function(key, value){
+         //   data.judul = value.innerText;
+         //   data.link = value.parentElement.href;
 
-           //ambil data description
-           data.description = description[a].innerText; 
+         //   //ambil data description
+         //   data.description = description[a].innerText; 
            
-           //ambil data kategory
-           data.kategory = kategory[a].innerText;
+         //   //ambil data kategory
+         //   data.kategory = kategory[a].innerText;
 
-           //ambil data date
-           console.log(a, date);
-           if (date[a].innerText == "undefined") {
-            data.date = "-";
-          }else{
-            data.date = date[a].innerText;
-          }
+         //   //ambil data date
+         //   console.log(a, date);
+         //   if (date[a].innerText == "undefined") {
+         //    data.date = "-";
+         //  }else{
+         //    data.date = date[a].innerText;
+         //  }
            
 
-           console.log(data);
-           a++;
-         })
+         //   console.log(data);
+         //   a++;
+         // })
 
        })
      </script>
