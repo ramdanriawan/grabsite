@@ -3,7 +3,7 @@
 /**
  *
  */
- class csavedb extends CI_Controller
+ class Csavedb extends CI_Controller
  {
 
  	//controller untuk save ke database

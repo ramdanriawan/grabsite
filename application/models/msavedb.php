@@ -2,7 +2,7 @@
 /**
 *
 */
-class msavedb extends CI_Model
+class Msavedb extends CI_Model
 {
 	//fungsi untuk mencek duplicate data
 	function mcheckduplicaterowf($sql)

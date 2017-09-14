@@ -48,7 +48,7 @@ echo $get;
           console.log(data); console.log(a);
 
           //lakukan request ajax
-          var url = "/index.php/csavedb/csavedbf";
+          var url = "/index.php/Csavedb/Csavedbf";
 
           $.ajax({
             url : url,
