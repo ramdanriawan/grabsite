@@ -30,9 +30,9 @@
 
     <script>
       $(document).ready(function() {
-          var form_jump = $(".form-jump");
+          var form_jump  = $(".form-jump");
           var input_jump = $(".input-jump");
-          console.log("oke");
+
           form_jump.submit(function(event) {
             event.preventDefault();
             window.location.href = `<?php echo base_url();?>${input_jump.val()}/<?php echo $hasil["jumlah_limit"];?>`;

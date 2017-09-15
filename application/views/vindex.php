@@ -2,8 +2,8 @@
 <!-- script php untuk melihat $hasil untuk di proses -->
 <?php   //echo "<pre>";print_r($_SERVER);print_r($hasil); /*print_r($_GET);*/ echo "</pre>";?>
 
-<main class="main col-md-7"></main>
-  <content class="content">
+<main class="main col-md-7">
+ <content class="content">
     <div class="row data">
       <!-- Text Berita Terbaru -->
       <div class="col-md-6 pull-left">
@@ -16,16 +16,16 @@
             <strong>Limit: </strong><select class="form-control select-limit" name="limit">
               <!--  script php untuk menentukan paging yang telah terpilih -->
               <?php
-              $selected = "selected";
+               $selected = "selected";
 
-              for ($i=10; $i <= 50; $i+= 10) {
-                //cek jika yang dipilih user adalah limit yang sekarang
-                if ($i == $hasil["jumlah_limit"]) {
-                  echo "<option value='$i' $selected>$i</option>";
-                }else {
-                  echo "<option value='$i'>$i</option>";
-                }
-              }
+               for ($i=10; $i <= 50; $i+= 10) {
+                 //cek jika yang dipilih user adalah limit yang sekarang
+                 if ($i == $hasil["jumlah_limit"]) {
+                   echo "<option value='$i' $selected>$i</option>";
+                 }else {
+                   echo "<option value='$i'>$i</option>";
+                 }
+               }
               ?>
           </select>
         </form>
@@ -69,6 +69,7 @@ EOD;
 }?>
 
   </content>
+</main>
 
   <div class="row bungkus">
     <div class="col-md-12">

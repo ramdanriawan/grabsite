@@ -45,7 +45,7 @@
 		<!--  menu navigasi -->
 		<nav class="navigasi">
 			<!--  kategory berita -->
-			<ul class="nav nav-tabs nav-justified text-capitalize">
+			<ul class="nav nav-tabs nav-justified text-uppercase">
 				<li class="active">
 					<a class="active" href="#menu1">News</a>
 				</li>

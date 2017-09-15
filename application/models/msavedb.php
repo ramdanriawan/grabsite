@@ -7,7 +7,10 @@ class Msavedb extends CI_Model
 	//fungsi untuk mencek duplicate data
 	function mcheckduplicaterowf($sql)
 	{
+		//query untuk save ke database
 		$query = $this->db->query($sql);
+
+		//statement if untuk cek jumlah baris output
 		if($query->num_rows() == 0){
 			return true;
 		}else {
@@ -18,7 +21,7 @@ class Msavedb extends CI_Model
 	//fungsi untuk save ke database
 	function msavedbf($file)
 	{
-		$sql = "select link from berita where link='$file[link]'";
+		$sql   = "select link from berita where link ='$file[link]'";
 		$nilai = $this->mcheckduplicaterowf($sql);
 
 		if($nilai){
@@ -27,5 +30,7 @@ class Msavedb extends CI_Model
 			return false;
 		}
 	}
+
+	//fungsi untuk
 }
  ?>

@@ -9,20 +9,21 @@
  	//controller untuk save ke database
  	function csavedbf()
  	{
- 		$this->load->model("msavedb");
+   //load model untuk save ke database
+ 		$this->load->model("Msavedb");
 
  		$file = array(
-    	"gambar"      => $this->input->get("gambar"),
+  "gambar"      => $this->input->get("gambar"),
 		"judul"       => $this->input->get("judul"),
 		"link"        => $this->input->get("link"),
-		"description" => $this->input->get("description"),#
+		"description" => $this->input->get("description"),
 		"kategory"    => $this->input->get("kategory"),
 		"sumber"      => $this->input->get("sumber"),
-		"dibaca"      => $this->input->get("dibaca"),#
+		"dibaca"      => $this->input->get("dibaca"),
 		"date"        => $this->input->get("date")
 		);
 
-		$nilai = $this->msavedb->msavedbf($file);
+		$nilai = $this->Msavedb->msavedbf($file);
 
 		if ($nilai) {
 			$data["status"] = "Success";
@@ -31,12 +32,15 @@
 			$data["status"] = "Duplicate Entry!";
 			$this->load->view("vsavedb", $data);
 		}
+
  	}
 
  	//controller untuk
  	function index(){
  		echo $this->input->get("umur");
  	}
+
+  //fungsi untuk
  }
 
  ?>

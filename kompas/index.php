@@ -48,11 +48,11 @@ echo $get;
           console.log(data); console.log(a);
 
           //lakukan request ajax
-          var url = "/index.php/Csavedb/Csavedbf";
+          var url       = "/index.php/Csavedb/Csavedbf";
 
           $.ajax({
-            url : url,
-            data: data,
+            url    : url,
+            data   : data,
             success: function(response){
               console.log(response);
             }
