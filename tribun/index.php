@@ -32,6 +32,7 @@ foreach ($list as $a => $value) {
   foreach ($gambar as $a => $value) {
    //ambil data berita berdasarkan index variabel $a
    $data = [
+     "sumber"      => $url,
      "gambar"      => str_replace(" ", "", $gambar->eq($a)->attr("src")),
      "judul"       => $judul->eq($a)->text(),
      "link"        => $judul->eq($a)->attr("href"),
@@ -39,6 +40,9 @@ foreach ($list as $a => $value) {
      "kategory"    => $kategory->eq($a)->text(),
      "date"        => $date->eq($a)->attr("title")
    ];
+
+  #mengambil data waktu untuk sorting berdasarkan waktu (in milisecond)
+  $data["sorting"] = strtotime(substr($data["date"], -8, 5));
 
    //khusus untuk print data
    print "<pre>";

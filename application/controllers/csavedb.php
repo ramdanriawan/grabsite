@@ -20,7 +20,8 @@
 		"kategory"    => $this->input->get("kategory"),
 		"sumber"      => $this->input->get("sumber"),
 		"dibaca"      => $this->input->get("dibaca"),
-		"date"        => $this->input->get("date")
+		"date"        => $this->input->get("date"),
+  "sorting"     => $this->input->get("sorting")
 		);
 
 		$nilai = $this->Msavedb->msavedbf($file);

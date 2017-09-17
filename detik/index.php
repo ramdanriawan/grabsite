@@ -33,6 +33,9 @@ foreach ($list as $a => $value) {
    $data["kategory"]       = $list_description_array[0];
    $data["date"]           = $list_description_array[1];
 
+   #mengambil data waktu untuk sorting berdasarkan waktu (in milisecond)
+   $data["sorting"] = strtotime(substr($data["date"], -9, 5));
+
 //khusus untuk melihat data
 echo "<pre>";
 print_r($data);

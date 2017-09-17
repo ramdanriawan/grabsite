@@ -24,7 +24,7 @@ class mindex extends CI_Model
     }
 
     //jalankan querynya untuk mengambil data dari database
-    $query           = $this->db->select("*")->from("berita")->order_by("id", "desc")->limit($limit, $start)->get();
+    $query           = $this->db->select("*")->from("berita")->order_by("sorting", "desc")->limit($limit, $start)->get();
 
     //foreach untuk mendapatkan hasilnya
     foreach ($query->result() as $key) {

@@ -1,6 +1,6 @@
 <?php
 //require library phpQuery
-require_once("..\phpquery\phpQuery\phpQuery.php");
+require_once("../phpquery/phpQuery/phpQuery.php");
 
 // ambil data update kompas
 $url = "http://kompas.com";
@@ -26,6 +26,9 @@ foreach($latest->elements as $a => $value){
   "gambar"   => $gambar  ->eq($a)->attr("src")
  ];
 
+  #mengambil data waktu untuk sorting berdasarkan waktu (in milisecond)
+  $data["sorting"] = strtotime(substr($data["date"], -9, 5));
+
  //khusus untuk melihat data
  echo "<pre>";
  print_r($data);
@@ -40,6 +43,6 @@ $data      = http_build_query($data);
  echo "status: " . file_get_contents($data_get);
 
  //
-}
 
+}
 ?>

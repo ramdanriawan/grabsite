@@ -7,12 +7,7 @@
  <body>
 
  <ul>
-  <div class="gokil">
-sdfsfsfdsfssdfdsfsfsdfsf
-  </div>
-  ramdan
-
- </ul>
+  <img alt="steres"  class="gokil"  id="nama">
 
  </body>
 </html>
