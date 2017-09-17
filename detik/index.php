@@ -1,7 +1,7 @@
 
 <?php
 //require library phpQuery
-require_once("..\phpquery\phpQuery\phpQuery.php");
+require_once("../phpquery/phpQuery/phpQuery.php");
 
 //data utama berita
 $url         = "http://detik.com";
@@ -19,8 +19,8 @@ foreach ($list as $a => $value) {
  $data = [
   "sumber"      => "http://detik.com",
   "gambar"      => $gambar->eq($a)->attr("src"),
-  "judul"       => $judul->eq($a)->text(),
-  "link"        => $link->eq($a)->attr("href"),
+  "judul"       => $judul ->eq($a)->text(),
+  "link"        => $link  ->eq($a)->attr("href"),
   "description" => str_replace(" ", "", $description->eq($a)->elements[0]->nextSibling->textContent)
  ];
 
