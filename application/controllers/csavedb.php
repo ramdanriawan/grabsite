@@ -6,7 +6,7 @@
  class Csavedb extends CI_Controller
  {
 
- 	//controller untuk save ke database
+ 	//fungsi untuk save ke database
  	function csavedbf()
  	{
    //load model untuk save ke database

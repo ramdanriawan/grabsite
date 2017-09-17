@@ -1,68 +1,45 @@
 <?php
+//require library phpQuery
+require_once("..\phpquery\phpQuery\phpQuery.php");
+
+// ambil data update kompas
 $url = "http://kompas.com";
 $get = file_get_contents($url);
 
-echo $get;
+//list data berita
+$dom      = phpQuery::newDocument($get);
+$latest   = pq(".article__list.clearfix:not(.article__list--video) .article__link");
+$date     = pq(".article__list.clearfix:not(.article__list--video) .article__date");
+$kategory = pq(".article__list.clearfix:not(.article__list--video) .article__subtitle.article__subtitle--inline");
+$gambar   = pq(".article__list.clearfix:not(.article__list--video) .article__list__asset.clearfix .article__asset img");
 
- ?>
+//lakukan perulangan foreach untuk menentukan data berita
+foreach($latest->elements as $a => $value){
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <script src="/node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
-    <title>Test Kompass.com</title>
-  </head>
-  <body>
+ //data ajax yang akan dikirim ke server savedb
+ $data = [
+  "sumber"   => $url,
+  "link"     => $latest  ->eq($a)->attr("href"),
+  "judul"    => $latest  ->eq($a)->text(),
+  "date"     => $date    ->eq($a)->text(),
+  "kategory" => $kategory->eq($a)->text(),
+  "gambar"   => $gambar  ->eq($a)->attr("src")
+ ];
 
-    <script>
-      $(document).ready(function(){
-        var latest   = $(".article__list.clearfix:not(.article__list--video) .article__link");
-        var date     = $(".article__list.clearfix:not(.article__list--video) .article__date");
-        var kategory = $(".article__list.clearfix:not(.article__list--video) .article__subtitle.article__subtitle--inline");
-        var gambar   = $(".article__list.clearfix:not(.article__list--video) .article__list__asset.clearfix .article__asset img");
-        var data     = {sumber: "http://www.kompas.com"};
-        var a        = 0;
-        // console.log(latest); console.log(date); console.log(kategory); console.log(gambar);
+ //khusus untuk melihat data
+ echo "<pre>";
+ print_r($data);
 
-        //menentukan isi data
-        $.each(latest, function(key, value){
-          //menentukan link dan judul
-          data.link     = value.href;
-          data.judul    = value.innerText;
-          console.log(data.judul);
+//jadikan data sebagai query
+$data      = http_build_query($data);
 
-          //menentukan tanggal
-          data.date     = date[a].innerText;
-          console.log(data.date);
+ //gabungkan url save db dengan data field
+ $data_get = "http://localhost/index.php/Csavedb/csavedbf?" . $data;
 
-          //menentukan kategory
-          data.kategory = kategory[a].innerText;
-          console.log(data.kategory);
+ //tampilkan data hasil dari request ajax
+ echo "status: " . file_get_contents($data_get);
 
-          //menentukan gambar
-          data.gambar   = gambar[a].src;
-          console.log(data.gambar);
+ //
+}
 
-          //untuk melihat isi data
-          console.log(data); console.log(a);
-
-          //lakukan request ajax
-          var url       = "/index.php/Csavedb/Csavedbf";
-
-          $.ajax({
-            url    : url,
-            data   : data,
-            success: function(response){
-              console.log(response);
-            }
-          })
-
-          //menambahkan nilai a;
-          a++;
-        })
-
-      })
-    </script>
-  </body>
-</html>
+?>
