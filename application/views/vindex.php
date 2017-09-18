@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
 <!-- script php untuk melihat $hasil untuk di proses -->
-<?php   //echo "<pre>";print_r($_SERVER);print_r($hasil); /*print_r($_GET);*/ echo "</pre>";?>
+<?php   /*//echo*/ "<pre>";/*print_r($_SERVER);*/print_r($hasil); /*print_r($_GET);*/ echo "</pre>";?>
 
 <main class="main col-md-7">
  <content class="content">

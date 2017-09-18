@@ -1,7 +1,7 @@
 <?php /**
  *
  */
-class mindex extends CI_Model
+class Mindex extends CI_Model
 {
 
   //fungsi untuk menampilkan data pada halaman index
@@ -53,7 +53,7 @@ class mindex extends CI_Model
 
   //fungsi untuk mereturn link url paging dan jumlah paging beserta limit yang sudah di ambil di database
   function paging($page, $limit, $jumlah_paging){
-
+    $link = [];
     //perulangan untuk menentukan link dan jumlah link
     for ($i=1; $i < $jumlah_paging; $i++) {
       $link[$i]        = "$i/$limit";

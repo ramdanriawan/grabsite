@@ -19,9 +19,9 @@
 		"description" => $this->input->get("description"),
 		"kategory"    => $this->input->get("kategory"),
 		"sumber"      => $this->input->get("sumber"),
-		"dibaca"      => $this->input->get("dibaca"),
+		"dibaca"      => (int) $this->input->get("dibaca"),
 		"date"        => $this->input->get("date"),
-  "sorting"     => $this->input->get("sorting")
+  "sorting"     => (int) $this->input->get("sorting")
 		);
 
 		$nilai = $this->Msavedb->msavedbf($file);
@@ -32,9 +32,9 @@
 		}else{
 			$data["status"] = "Duplicate Entry!";
 			$this->load->view("vsavedb", $data);
-		}
 
- 	}
+  }
+ }
 
  	//controller untuk
  	function index(){

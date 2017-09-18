@@ -49,8 +49,8 @@ foreach ($list as $a => $value) {
    print_r($data);
 
    //variabel ajax options
-   $data     = http_build_query($data);
-   $data_get = "http://localhost/index.php/Csavedb/csavedbf?" . $data;
+   $data           = http_build_query($data);
+   $data_get       = "http://localhost/index.php/Csavedb/csavedbf?" . $data;
 
 //tampilkan data hasil dari request ajax
   echo "status: " . file_get_contents($data_get) . "<br />";

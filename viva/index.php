@@ -17,12 +17,12 @@ $list_kategory = $list->find("div.date");
 foreach ($list as $a => $value) {
  //data berita
  $data = [
-  "sumber"   => $ur,
+  "sumber"   => $url,
   "gambar"   => $gambar->eq($a)->attr("data-original"),
   "judul"    => $judul->eq($a)->text(),
-  "link"     =>$link->eq($a)->attr("href"),
-  "kategory" =>$kategory->eq($a)->text(),
-  "date"     =>$list_kategory->eq($a)->text()
+  "link"     => $link->eq($a)->attr("href"),
+  "kategory" => $kategory->eq($a)->text(),
+  "date"     => $list_kategory->eq($a)->text()
  ];
 
   #mengambil data waktu untuk sorting berdasarkan waktu (in milisecond)
@@ -33,8 +33,8 @@ echo "<pre>";
 print_r($data);
 
 //ajaxoptions
-$data     = http_build_query($data);
-$data_get = "http://localhost/index.php/Csavedb/csavedbf?" . $data;
+$data              = http_build_query($data);
+$data_get          = "$_SERVER[]/index.php/Csavedb/csavedbf?" . $data;
 
 //tampilkan data hasil dari request ajax
 echo "status: " . file_get_contents($data_get) . "<br />";
